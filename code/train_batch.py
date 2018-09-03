@@ -19,7 +19,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", dest="dataset", type=str, metavar='<str>', required=True, help="The name of the dataset (small_1|small_2|large|amazon)")
 parser.add_argument("--source", dest="source", type=str, metavar='<str>', required=True, help="The name of the source domain")
 parser.add_argument("--target", dest="target", type=str, metavar='<str>', required=True, help="The name of the source target")
-parser.add_argument("-o", "--out-dir", dest="out_dir_path", type=str, metavar='<str>', required=True, help="The path to the output directory")
 parser.add_argument("-v", "--vocab-size", dest="vocab_size", type=int, metavar='<int>', default=10000, help="Vocab size. '0' means no limit (default=0)")
 parser.add_argument("--n-class", dest="n_class", type=int, metavar='<int>', default=3, help="The number of ouput classes")
 parser.add_argument("-t", "--type", dest="model_type", type=str, metavar='<str>', default='DAS', help="Model type (default=DAS)")
@@ -40,6 +39,9 @@ parser.add_argument("--dropout", dest="dropout_prob", type=float, metavar='<floa
 parser.add_argument("--discrepancy-obj", dest="minimize_discrepancy_obj", type=str, metavar='<str>', default='kl_loss', help="The loss for minimizing domain discrepancy (default=kl_loss)")
 
 # hyper-parameters related to DAS objectives
+# You can play with those hyper-parameters to see the different variants of our model. 
+# e.g. set weight_uns to 0 denotes DAS-EM; set weight_entropy to 0 denotes DAS-SE; 
+# set weight_discrepancy, weight_entropy, weight_uns all to 0s denotes NaiveNN.
 parser.add_argument("--weight-discrepancy", dest="weight_discrepancy", type=float, metavar='<float>', default=200, help="The weight of the domain discrepancy minimization objective (lamda_1 in the paper)")
 parser.add_argument("--weight-entropy", dest="weight_entropy", type=float, metavar='<float>', default=1.0, help="The weight of the target entropy objective (lamda_2 in the paper)")
 parser.add_argument("--weight-uns", dest="weight_uns", type=float, metavar='<float>', default=3.0, help="The max value of the ensemble prediction objective weight (lamda_3 in the paper)")
