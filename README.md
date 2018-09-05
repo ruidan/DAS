@@ -1,5 +1,5 @@
 # Domain Adaptive Semi-supervised learning (DAS)
-Codes and dataset for EMNLP2018 paper ‘‘Adaptive Semi-supervised Learning for Cross-domain Sentiment Classification’’. (preprint coming soon)
+Codes and dataset for EMNLP2018 paper ‘‘Adaptive Semi-supervised Learning for Cross-domain Sentiment Classification’’. [(pdf)](http://arxiv.org/abs/1809.00530)
 
 ## Dataset & pretrained word embeddings
 You can download the datasets (small-scale, large-scale, and amazon-benchmark) at [[Download]](https://drive.google.com/open?id=1rEwGXdEqt2xZwtJi7RHeRcSZDuYrSIpq). The zip file should be decompressed and put in the root directory.
